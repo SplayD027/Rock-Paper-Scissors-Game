@@ -83,7 +83,7 @@ hr{
     border: none;
     background: floralwhite;
     background-repeat: no-repeat;
-    background-size: 20vw;
+    background-size: 200px;
     background-position: center;
     transition: 0.2s;
     cursor: pointer;
@@ -104,19 +104,19 @@ hr{
 }
 #rock:hover,#paper:hover,#scissors:hover{
     width: 25vw;
-    background-size: 22vw;
+    background-size: 230px;
     opacity: 0.8;
 }
 #rock:active,#paper:active,#scissors:active{
-    background-size: 20vw;
+    background-size: 200px;
 }
-#reset{
+.reset{
     display: none;
     position: absolute;
     bottom: 10px;
     left: 10px;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border: none;
     background: floralwhite;
     background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/446387-200.png');
@@ -126,13 +126,16 @@ hr{
     transition: 0.2s;
     opacity: 0.6;
 }
-#reset:hover{
+.reset:hover{
     background-size: 50px;
 }
-#reset:focus{
+.reset:focus{
     outline:0;
 }
-#reset:active{
+.reset:active{
     opacity: 0.8;
     background-size: 40px;
-}    
+}
+#biggerResetButton{
+    background-size: 100px;
+}

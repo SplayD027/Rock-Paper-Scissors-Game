@@ -5,9 +5,9 @@ let lose = 0;
 let buttons = Array.from(document.querySelectorAll('.buttons button'));
 buttons.forEach(button => button.addEventListener('click',play));
 buttons.forEach(button => button.addEventListener('click',function(){
-    document.querySelector('#reset').style.display = "block";
+    document.querySelector('.reset').style.display = "block";
 }));
-let resetButton = document.querySelector('#reset');
+let resetButton = document.querySelector('.reset');
 resetButton.addEventListener('click',reset);
 
 function computerPlay(){
@@ -72,6 +72,12 @@ function game(playerSelection,computerSelection){
 }
 
 function play(a){
+  if (win == 5 || lose == 5){
+    document.querySelector('.reset').id= "biggerResetButton";
+    setTimeout(() => {
+      document.querySelector('.reset').id= "";
+    }, 200);
+  }
   if (!(win == 5 || lose == 5)){
   count++;
   document.querySelector("#round").innerText = "Round " + count;
@@ -95,5 +101,5 @@ function reset(){
     document.querySelector("#lose").innerText = lose;
     showResult("","","");
     document.querySelector("#title").innerText = "Rock Paper Scissors";
-    document.getElementById('reset').style.display = "none";
+    document.querySelector('.reset').style.display = "none";
 }

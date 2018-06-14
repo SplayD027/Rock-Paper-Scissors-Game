@@ -4,26 +4,36 @@
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
   <link rel='stylesheet' type='text/css' href='css/main.css'>
-</head>
+  <link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
 <body>
   <main>
-  <div class='box'>
-    <div class='text'>
-      <h1>Rock Paper Scissors</h1>
-      <p>Click on one of the buttons</p>
-    </div>
+  <div class='box' id="box1">
+    <div id='title'>Rock Paper Scissors</div>
+  </div>
+  <div id="round"></div>  
+  <hr>  
+  <div class='box' id="box2">
     <div class="scores">
-      <h3 id="win">Win</h3>
-      <h4 id="round">Round</h4>
-      <h3 id="lose">Lose</h3>
+      <span id="win">0</span>
+      <span>:</span>
+      <span id="lose">0</span>
     </div>
+  </div>  
+  <hr>
+  <div id="result">
+      <span id="ply"></span>
+      <div><span id="whoWon"></span></div>
+      <span id="ai"></span>
+  </div>
+  <div class='box' id="box3"> 
     <div class='buttons'>
       <button id='rock'></button>
       <button id='paper'></button>
       <button id='scissors'></button>
     </div>
+    <button id="reset"></button>
   </div>
-  </main>
+  </main>  
   <script src="script\game.js"></script>
 </body>
 </html>

@@ -1,75 +1,138 @@
 *{
     box-sizing: border-box;
 }
-body,html{
+body{
     margin: 0;
     padding: 0;
+    font: 1em 'Song Myung', serif;;
+    color: #4c4b48;
     text-align: center;
-    font: 1em sans-serif;
-}
-main{
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: FloralWhite;
-}
-.box{
-    height: 500px;
-    width: 500px;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    border: solid black 1px;
-    
+    background-color: #ebe0cc;
 }
-.box *{
+main{
+    position: relative;
+    margin: 5vh;
+    width: 90vw;
+    height: 90vh;
+    border-radius: 2%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffaf0;
+}
+.box{
+    width: 95vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#box1,#box2,#box3{
     margin: 30px;
 }
-.text p{
+hr{
+    width: 65vw;
+    border: solid 1.5px #ebe0cc;
+}
+#title{
+    font-size: 5em;
     font-weight: bold;
 }
+#round,#result{
+    height: 1.5em;
+    font-size: 1.5em 
+}
 .scores *{
-    display: inline;
-    margin: 50px; 
-} 
-#win{
-    color: blue;
-} 
-#lose{
-    color: red;
-}  
+    margin: 10px 10px; 
+    font-size: 5em;
+}
+#result{
+    position: relative;
+    width: 60vw;
+}
+#result div{
+    display: inline-block;
+    width: 105px;
+    text-align: center;
+}
+#ply,#ai{
+    position: absolute;
+    top: -113px;
+}
+#ply{
+    left: 0px;
+}
+#ai{
+    right: 0px;
+}
 .buttons{
     display: flex;
     justify-content: center;
     align-content: center;
+    align-items: center;
 }
 .buttons button{
     margin: 30px;
-    padding: 30px 45px;
+    width: 20vw;
+    height: 30vh;
+    border: none;
     background: floralwhite;
-    border: solid lightslategray 1px;
+    background-repeat: no-repeat;
+    background-size: 20vw;
+    background-position: center;
+    transition: 0.2s;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.buttons button:focus{
+    outline:0;
 }
 #rock{
     background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/477918-200.png");
-    background-repeat: no-repeat;
-    background-size: 50px;
-    background-position: center;
 }
 #paper{
-    background: url("https://d30y9cdsu7xlg0.cloudfront.net/png/477922-200.png");
-    background-repeat: no-repeat;
-    background-size: 50px;
-    background-position: center;
+    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/477922-200.png");
+    
 }
 #scissors{
-    background: url("https://d30y9cdsu7xlg0.cloudfront.net/png/477919-200.png");
-    background-repeat: no-repeat;
-    background-size: 50px;
-    background-position: center;
+    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/477919-200.png");
 }
 #rock:hover,#paper:hover,#scissors:hover{
-    background-size: 60px;
-    background-color: white;
+    width: 25vw;
+    background-size: 22vw;
+    opacity: 0.8;
 }
+#rock:active,#paper:active,#scissors:active{
+    background-size: 20vw;
+}
+#reset{
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: floralwhite;
+    background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/446387-200.png');
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: center;
+    transition: 0.2s;
+    opacity: 0.6;
+}
+#reset:hover{
+    background-size: 50px;
+}
+#reset:focus{
+    outline:0;
+}
+#reset:active{
+    opacity: 0.8;
+    background-size: 40px;
+}    

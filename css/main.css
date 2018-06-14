@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+}
+body,html{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font: 1em sans-serif;
+}
+main{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: FloralWhite;
+}
+.box{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    
+}
+.box *{
+    margin: 30px;
+}
+.text p{
+    font-weight: bold;
+}
+.scores *{
+    display: inline;
+    margin: 50px; 
+} 
+#win{
+    color: blue;
+} 
+#lose{
+    color: red;
+}  
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.buttons button{
+    margin: 30px;
+    padding: 30px 45px;
+    background: floralwhite;
+    border: solid lightslategray 1px;
+}
+#rock{
+    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/477918-200.png");
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+}
+#paper{
+    background: url("https://d30y9cdsu7xlg0.cloudfront.net/png/477922-200.png");
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+}
+#scissors{
+    background: url("https://d30y9cdsu7xlg0.cloudfront.net/png/477919-200.png");
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+}
+#rock:hover,#paper:hover,#scissors:hover{
+    background-size: 60px;
+    background-color: white;
+}

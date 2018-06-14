@@ -1,15 +1,9 @@
-var computerSelection = "";
-var playerSelection = "";
-var win = 0;
-var lose = 0;
-
 function computerPlay(){
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-//  let hand = getRandomIntInclusive(1,3);
   switch(getRandomIntInclusive(1,3)){
     case 1:
       return "Rock";
@@ -20,72 +14,50 @@ function computerPlay(){
   }
 }
 
-function play(playerSelection,computerSelection){
+function game(playerSelection,computerSelection){
   if (playerSelection.toLowerCase() == computerSelection.toLowerCase()){
-    alert("Tie! You Both Chose" + computerSelection);
+    document.querySelector(".text p").innerText = "Tie! You Both Chose" + computerSelection;
     return;
   }
   switch(playerSelection.toLowerCase()){
     case "paper":
       if (computerSelection == "Rock"){
-        console.log("You Won! Paper beats Rock")
+        document.querySelector(".text p").innerText = "You Won! Paper beats Rock";
         return 1;
       } else {
-        console.log("You Lose! Scissors beats Paper")
+        document.querySelector(".text p").innerText = "You Lose! Scissors beats Paper";
         return 0;
       }
-//        (computerSelection == "Rock") ? (
-//          alert("You Won! Paper beats Rock"),
-//          return 1;
-//        ):(
-//          alert("You Lose! Scissors beats Paper"),
-//          return 0;
-//        );
     case "rock":
     if (computerSelection == "Scissors"){
-      console.log("You Won! Rock beats Scissors")
+      document.querySelector(".text p").innerText = "You Won! Rock beats Scissors";
       return 1;
     } else {
-      console.log("You Lose! Paper beats Rock")
+      document.querySelector(".text p").innerText = "You Lose! Paper beats Rock";
       return 0;
     }
-//        (computerSelection == "Scissors") ? (
-//          alert("You Won! Rock beats Scissors"),
-//          return 1;
-//        ):(
-//          alert("You Lose! Paper beats Rock"),
-//          return 0;
-//        );
     case "scissors":
     if (computerSelection == "Paper"){
-      console.log("You Won! Scissors beats Paper")
+      document.querySelector(".text p").innerText = "You Won! Scissors beats Paper";
       return 1;
     } else {
-      console.log("You Lose! Rock beats Scissors")
+      document.querySelector(".text p").innerText = "You Lose! Rock beats Scissors";
       return 0;
     }
-
-//        (computerSelection == "Paper") ? (
-//          alert("You Won! Scissors beats Paper"),
-//          return 1;
-//        ):(
-//          alert("You Lose! Rock beats Scissors"),
-//          return 0;
-//        );
  }
 }
-
-function game(){
-  let result = 0;
+/*
+function play(a){
+  console.log('Best of 5!');
+  let result = 0,win = 0,lose = 0,playerSelection = "";
   for (let i=0;i!=5;i++){
-    playerSelection = prompt().toLowerCase();
+    playerSelection = a.target.id;
     console.log(playerSelection);
-    if (playerSelection != "paper" || playerSelection != "rock" || playerSelection != "scissors"){
-      console.log('Please type in "Paper" "Rock" "Scissors"')
-      return "Play Again";
-    }
-    computerSelection = computerPlay();
-    result = play(playerSelection,computerSelection);
+      if (playerSelection != "paper" && playerSelection != "rock" && playerSelection != "scissors"){
+        console.log('Please type in "Paper" "Rock" "Scissors"');
+        return;
+      }
+    result = game(playerSelection,computerPlay());
     (result == 1) ? win++ : (result == 0) ? lose++ : "";
   }
   if (win > lose){
@@ -94,3 +66,31 @@ function game(){
     console.log("You Lose! Score: " + win);
   }
 }
+*/
+function play(a){
+  if (win == 5 || lose == 5){
+    document.querySelector(".text h1").innerText = "YOU WON!";
+    if (lose == 5) document.querySelector(".text h1").innerText = "YOU LOSE!";
+    return;
+  }
+  if (!(win == 5 || lose == 5)) count++;
+  document.querySelector("#round").innerText = "Round " + count;
+  let playerSelection = a.target.id;
+  console.log(playerSelection);
+
+  let result = game(playerSelection,computerPlay());
+  (result == 1) ? win++ : (result == 0) ? lose++ : "";
+
+  document.querySelector("#win").innerText = win;
+  document.querySelector("#lose").innerText = lose;
+}
+
+let buttons = Array.from(document.querySelectorAll('.buttons button'));
+buttons.forEach(button => button.addEventListener('click',play));
+
+let text = document.querySelector(".text h1");
+let smallText = document.querySelector(".text p");
+
+let count = 0;
+let win = 0;
+let lose = 0;
